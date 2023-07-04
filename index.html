@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Marcos Henrique Marcarini Junior">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="logoArea">
+        <img src="./src/img/logo-cdl-corretora.png" alt="CDL Corretora" class="brand">
+    </div>
+    <div class="container">  
+        <div class="content">
+            <h2>Simule seu plano</h2>
+            <form  class="formulario" id="simulador">
+                <div class="form-control">
+                    <label for="funcionarios">Número de Funcionários</label>
+                    <input type="number" name="funcionarios" id="funcionarios" class="inputentire">
+                </div>
+                <div class="form-control">
+                    <select name="produtos" class="form-select" aria-label="Default select example">
+                        <option selected>Escolha um produto</option>
+                        <option value="personal" id="personal">Personal</option>
+                        <option value="personalA" id="personalA">Personal A</option>
+                        <option value="UniTeen" id="UniTeen">Unimed Teen</option>
+                        <option value="UniTeenRD" id="UniTeenRD">Unimed Teen RD</option>
+                        <option value="UniTeenRDA" id="UniTeenRDA">Unimed Teen RD A</option>
+                        <option value="Flex2" id="Flex2">Flex II</option>
+                        <option value="FlexA2" id="FlexA2">Flex A II</option>
+                        <option value="Flex3" id="Flex3">Flex III</option>
+                        <option value="FlexA3" id="FlexA3">Flex A III</option>
+                        <option value="UniTrio" id="UniTrio">Unimed Trio</option>
+                        <option value="UniTrioRD" id="UniTrioRD">Unimed Trio RD</option>
+                        <option value="UniAmplo1" id="UniAmplo1">Unimed Amplo 1</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <p>Tipo de Plano</p>
+                    <div class="tipo-plano">
+                        <div class="enfermaria">
+                            <input type="radio" name="tipodeplano" id="tipo-plano" value="QColetivo">
+                            <label for="tipo-plano">Q. Coletivo</label>
+                        </div>
+                        <div class="apartamento">
+                            <input type="radio" name="tipodeplano" id="tipo-plano" value="QIndividual">
+                            <label for="tipo-plano">Q. Individual</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-control">
+                    <p>Diga quantos colaboradores há em sua empresa nas seguintes faixas etárias:</p>
+                    <div class="input-idades">
+                        <input type="number"  placeholder="0 à 18 anos" id="num0a18" class="inputentire">
+                        <input type="number"  placeholder="19 à 23 anos" id="num19a23" class="inputentire">
+                        <input type="number"  placeholder="24 à 28 anos" id="num24a28" class="inputentire">
+                        <input type="number"  placeholder="29 à 33 anos" id="num29a33" class="inputentire">
+                        <input type="number"  placeholder="34 à 38 anos" id="num34a38" class="inputentire">
+                        <input type="number"  placeholder="39 à 43 anos" id="num39a43" class="inputentire">
+                        <input type="number"  placeholder="44 à 48 anos" id="num44a48" class="inputentire">
+                        <input type="number"  placeholder="49 à 53 anos" id="num49a53" class="inputentire">
+                        <input type="number"  placeholder="54 à 58 anos" id="num54a58" class="inputentire">
+                        <input type="number"  placeholder="mais de 59 anos" id="nummaisde59" class="inputentire">
+                    </div>
+                    
+                </div>
+                <div class="extra">
+                    <div class="form-control" id="sos">
+                        <label for="sosuni">SOS Unimed</label>
+                        <input type="checkbox" name="sosuni" id="sosuni" preco="14.54">
+                    </div>
+                    <div class="form-control" id="medi">
+                        <label for="planoMedicamentos">Plano Medicamentos</label>
+                        <input type="checkbox" name="planoMedicamentos" id="planoMedicamentos" preco="5.44">
+                    </div>
+                    <div class="form-control" id="prote">
+                        <label for="proteFamiliar">Proteção Familiar</label>
+                        <input type="checkbox" name="proteFamiliar" id="proteFamiliar" preco="8.95">
+                    </div>
+                </div>
+                
+                <div class="form-control">
+                    <input type="submit" value="Calcular" onsubmit="CalcularPlano()" class="btn-enviar">
+                </div>
+            </form>
+
+            <div id="resultado" class="resNone"></div>
+            
+        </div>
+
+    </div>
+    <div class="rodape-content">
+        <p class="rodape-txt">
+            Desenvolvido por <a href="https://comconteudo.com.br" target="_blank">Conteúdo Gestão de Ideias</a>
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

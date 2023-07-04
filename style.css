@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 
+    Principais cores
+    #164773
+    #0B2B40
+    #1E5959
+    #3B8C6E
+    #89D99D 
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 60, 204, 248;
+    --background-end-rgb: 20, 82, 181;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    background-repeat: no-repeat;
+    color: rgb(var(--foreground-rgb));
+    
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.content h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.form-control p{
+    text-align: center;
+}
+.inputentire{
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: #0b2b4036 2px 5px 20px;
+    text-align: center;
+}
+.inputentire::placeholder{
+    text-align: center;
+    color: #0B2B40;
+}
+.input-idades{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.btn-enviar{
+    background: rgb(4,57,209);
+    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    box-shadow: #0b2b4050 1px 5px 10px;
+    width: 200px;
+    font-size: 1.2rem;
+}
+.btn-enviar:hover{
+    animation: animarBK 10s ease-in-out infinite;
+    transform: scale(1.05);
+    transition: 400ms;
+    cursor: pointer;
+}
+#sos, #medi, #prote{
+    display: flex !important;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap !important;
+    align-items: center;
+}
+.tipo-plano{
+    display: flex;
+    gap: 20px;
+}
+.extra{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.logoArea{
+    position: -webkit-sticky; /* Necessário para funcionar no Safari */
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: rgb(4,57,209);
+    background: linear-gradient(140deg, rgba(4,57,209,0.25) 0%, rgba(4,183,130,0.25) 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); 
+    top: 0;
+}
+.brand{
+    width: 150px;
+}
+
+.rodape-content{
+    padding-bottom: 20px;
+    text-align: center;
+}
+.rodape-txt{
+    text-align: center;
+    font-size: 0.8rem;
+}
+.rodape-txt a{
+    text-decoration: none;
+    color: #fff;
+}
+.rodape-txt a:hover{
+    color: rgba(4,183,130,1);
+    transition: 500ms ease-in-out;
+}
+
+select{
+    width: 250px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    background: rgb(4,57,209);
+    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
+    box-shadow: #0b2b4036 2px 5px 20px;
+    border: none;
+    animation: animarBK 12s ease-in-out infinite;
+
+}
+
+
+.resultado{
+    margin-top: 50px;
+    max-width: fit-content;
+    width: 100%;
+    text-align: center;
+    background: rgb(4,57,209);
+    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
+    padding: 10px;
+    font-weight: 700;
+    animation: aparecerResultado 500ms ease-in;
+    display: block !important;
+}
+
+.resNone{
+    display: none;
+}
+
+
+@keyframes animarBK {
+    0%{
+        background-size: 100% 100%;
+        background-position: top left;
+    }
+    50%{
+        background-size: 300% 300%;
+        background-position: bottom right;
+    }
+    100%{
+        background-size: 100% 100%;
+        background-position: top left;
+    }
+}
+
+@keyframes aparecerResultado {
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
