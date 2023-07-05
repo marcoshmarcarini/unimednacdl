@@ -297,14 +297,14 @@ UniAmplo1 = {
     }
 }
 
-
+/* var numFuncionarios = document.querySelector('#funcionarios').value */
 
 /* Função do Formulário */
 
 document.getElementById('simulador').addEventListener("submit", (e) => {
     e.preventDefault()
 
-    var numFuncionarios = document.querySelector('#funcionarios').value
+    
 
     var tipoPlano = document.querySelectorAll('#tipo-plano')
     tipoPlano.toString()
@@ -359,6 +359,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var resultado = document.getElementById('resultado')
             resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
             resultado.classList.add('resultado')
+            
             
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'personalA'){
             
