@@ -33,6 +33,14 @@ body{
     
     
 }
+.imgbk{
+    position: absolute;
+    z-index: -1;
+}
+.imgbk img{
+    width: 550px;
+    object-fit: cover;
+}
 .container{
     display: flex;
     justify-content: center;
@@ -277,6 +285,14 @@ select{
 }
 
 @media (max-width:500px) {
+    .imgbk{
+        position: absolute;
+        z-index: -1;
+    }
+    .imgbk img{
+        width: 250px;
+        object-fit: cover;
+    }
     .container{
         min-height: 100%;
         padding-bottom: 30px;
