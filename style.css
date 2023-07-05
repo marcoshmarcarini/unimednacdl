@@ -189,7 +189,7 @@ select{
     background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
     padding: 10px;
     font-weight: 700;
-    animation: aparecerResultado 500ms ease-in;
+    animation: aparecerResultado 300ms ease-in;
     display: block !important;
 }
 
