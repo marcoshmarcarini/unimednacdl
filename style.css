@@ -37,9 +37,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1440px;
     margin: auto;
+    padding-top: 20px;
+    padding-bottom: 25px;
 }
 
 .content{
@@ -170,9 +172,9 @@ select{
     height: 50px;
     font-size: 18px;
     text-align: center;
-    color: #ffffff;
+    /* color: rgba(4,183,130);
     background: rgb(4,57,209);
-    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
+    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%); */
     box-shadow: #0b2b4036 2px 5px 20px;
     border: none;
     animation: animarBK 12s ease-in-out infinite;
@@ -181,21 +183,70 @@ select{
 
 
 .resultado{
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     max-width: fit-content;
     width: 100%;
     text-align: center;
-    background: rgb(4,57,209);
-    background: linear-gradient(140deg, rgba(4,57,209, 1) 0%, rgba(4,183,130,1) 100%);
+    background-color: #ffffff;
+    color: #0B2B40;
     padding: 10px;
     font-weight: 700;
-    animation: aparecerResultado 300ms ease-in;
-    display: block !important;
+    animation: aparecerResultado 500ms ease-in;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .resNone{
     display: none;
 }
+
+.saibaMais{
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #0B2B40;
+    transition: 400ms ease;
+    
+}
+.saibaMais:hover{
+    background-color: transparent;
+}
+
+
+.saibaMais a{
+    text-decoration: none;
+    color: #0B2B40;
+    background-color: #ffffff;
+    font-weight: 700;
+    padding: 10px;
+    transition: 400ms ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.saibaMais a:hover{
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid rgba(4,183,130,1);
+
+}
+
+#cta{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
 
 
 @keyframes animarBK {
@@ -224,3 +275,18 @@ select{
     }
     
 }
+
+@media (max-width:500px) {
+    .container{
+        min-height: 100%;
+        padding-bottom: 30px;
+    }
+    .resultado{
+        margin-bottom: 25px;
+    }
+    .rodape-content{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+

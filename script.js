@@ -296,15 +296,14 @@ UniAmplo1 = {
         mais59: 1941.36
     }
 }
+/*var numFuncionarios = document.querySelector('#funcionarios').value*/
 
-/* var numFuncionarios = document.querySelector('#funcionarios').value */
 
 /* Função do Formulário */
 
 document.getElementById('simulador').addEventListener("submit", (e) => {
     e.preventDefault()
 
-    
 
     var tipoPlano = document.querySelectorAll('#tipo-plano')
     tipoPlano.toString()
@@ -338,7 +337,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         planoMedicamentos.checked ? valorPlanoMedicamentos = planoMedicamentos.getAttribute('preco') : valorPlanoMedicamentos = 0
         proteFamiliar.checked ? valorProteFamiliar = proteFamiliar.getAttribute('preco') : valorProteFamiliar = 0
 
-        if(tipoPlano[i].defaultValue === 'QColetivo' && selectProduto === 'personal'){
+        if(tipoPlano[i].defaultValue === 'QColetivo' && selectProduto === 'Personal'){
             
             valorSimulado = (
                 (personal.qColetivo.ate18 * numate18) +
@@ -357,11 +356,30 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
+
+
             
-            
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'personalA'){
+        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'PersonalA'){
             
             valorSimulado = (
                 (personalA.qColetivo.ate18 * numate18) +
@@ -380,8 +398,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
             
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeen'){
             console.log(tipoPlano[i].value)
@@ -425,8 +461,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
@@ -446,8 +500,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
@@ -488,8 +560,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRDA'){
             valorSimulado = (
@@ -509,8 +599,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex2'){
             valorSimulado = (
@@ -530,8 +638,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA2'){
             valorSimulado = (
@@ -551,8 +677,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex3'){
             valorSimulado = (
@@ -572,8 +716,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA3'){
             valorSimulado = (
@@ -593,8 +755,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrio'){
             valorSimulado = (
@@ -614,8 +794,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrio'){
             valorSimulado = (
@@ -635,8 +833,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
@@ -656,8 +872,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
@@ -677,8 +911,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
@@ -698,8 +950,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
@@ -719,8 +989,26 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             )
 
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="">   
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p>${textCTA}</p>`
+            resultado.scrollIntoView({behavior:"smooth"})
         }  
     }
 })
