@@ -415,11 +415,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
             
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeen'){
             console.log(tipoPlano[i].value)
@@ -478,11 +479,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
@@ -517,11 +519,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
@@ -577,11 +580,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRDA'){
             valorSimulado = (
@@ -616,11 +620,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex2'){
             valorSimulado = (
@@ -655,11 +660,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA2'){
             valorSimulado = (
@@ -694,11 +700,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex3'){
             valorSimulado = (
@@ -733,11 +740,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA3'){
             valorSimulado = (
@@ -772,11 +780,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrio'){
             valorSimulado = (
@@ -811,11 +820,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrio'){
             valorSimulado = (
@@ -850,11 +860,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
@@ -889,11 +900,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
@@ -928,11 +940,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
@@ -967,11 +980,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
@@ -1006,11 +1020,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
         }  
     }
 })

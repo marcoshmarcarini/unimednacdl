@@ -284,6 +284,7 @@ select{
 }
 
 
+
 /* Conheça os tipos de planos */
 /* Aqui vou criar os cards explicando o que cada plano tem */
 .planosTitulo{
@@ -380,6 +381,22 @@ select{
     border: 1px solid rgba(4, 183, 130, 1);
 }
 
+.rodape-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logos-parceiros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.logos-parceiros img{
+    width: 100px;
+}
 
 
 @keyframes animarBK {
