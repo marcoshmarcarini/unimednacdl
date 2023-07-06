@@ -396,6 +396,10 @@ select{
 }
 .logos-parceiros img{
     width: 100px;
+    transition: 400ms;
+}
+.logos-parceiros img:hover{
+    transform: scale(1.05);
 }
 
 
