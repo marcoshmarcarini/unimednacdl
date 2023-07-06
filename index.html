@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="imgbk"><img src="./src/img/escudo-bk.png" alt="CDL Corretora"></div>
+    <div class="imgbk" id="simuleSeuPlano"><img src="./src/img/escudo-bk.png" alt="CDL Corretora"></div>
     <div class="logoArea">
-        <img src="./src/img/logo-cdl-corretora.png" alt="CDL Corretora" class="brand">
+        <a href="/"><img src="./src/img/logo-cdl-corretora.png" alt="CDL Corretora" class="brand"></a>
+        <div class="nav-menu">
+            <div class="nav-link"><a href="#simuleSeuPlano">Simule</a></div>
+            <div class="nav-link"><a href="#conhecaOsPlanos">Conheça</a></div>
+        </div>
     </div>
     <div class="container">  
         <div class="content">
-            <h2>Simule seu plano</h2>
+            <h1>Simule seu plano</h1>
             <form  class="formulario" id="simulador">
                 <!-- <div class="form-control">
                     <label for="funcionarios">Número de Funcionários</label>
@@ -85,7 +89,7 @@
                 </div>
                 
                 <div class="form-control">
-                        <input type="submit" value="Calcular" onsubmit="CalcularPlano()" class="btn-enviar">
+                        <input type="submit" value="Calcular" onsubmit="CalcularPlano()" class="btn-enviar" id="rolarAteAqui">
                 </div>
             </form>
 
@@ -97,9 +101,220 @@
         
 
     </div>
-
-    <div class="planosArea">
-
+    <div class="planosTitulo" id="conhecaOsPlanos">
+        <h1>Conheça nossos planos</h1>
+    </div>
+    <div class="planosArea" >
+        <!-- Plano Personal -->
+        <div class="card-unimed">
+            <h2 class="card-title">Unimed Personal</h2>
+            <div class="card-body">
+                <p class="card-txt">
+                    Um plano personalizado para cuidar de você.
+                </p>
+                <ul class="card-list">
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/occupied-bed.png" alt="occupied-bed"/>
+                            <h4>Acomodação</h4> 
+                        </div>
+                        <p class="card-list-text">Enfermaria</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/sf-regular-filled/48/ffffff/roofing.png" alt="roofing"/>
+                            <h4>Cobertura</h4> 
+                        </div>
+                        <p class="card-list-text">Ambulatorial, obstetrícia e hospitalar</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/receive-change.png" alt="receive-change"/>
+                            <h4>Coparticipação</h4> 
+                        </div>
+                        <p class="card-list-text">Isenção de coparticipação para consultas e exames simples de acordo com o contrato.</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/place-marker--v1.png" alt="place-marker--v1"/>
+                            <h4>Abrangência</h4> 
+                        </div>
+                        <p class="card-list-text">Regional ou municipal</p>
+                    </li>
+                </ul>
+                <div class="card-saiba-mais">
+                    <a href="#simuleSeuPlano">Simule seu Plano</a>
+                </div>
+            </div>
+        </div>
+        <!-- Unimed Teen -->
+        <div class="card-unimed">
+            <h2 class="card-title">Unimed Teen</h2>
+            <div class="card-body">
+                <p class="card-txt">
+                    Os melhores valores de coparticipação para cobertura regional.
+                </p>
+                <ul class="card-list">
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/occupied-bed.png" alt="occupied-bed"/>
+                            <h4>Acomodação</h4> 
+                        </div>
+                        <p class="card-list-text">Enfermaria e apartamento</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/sf-regular-filled/48/ffffff/roofing.png" alt="roofing"/>
+                            <h4>Cobertura</h4> 
+                        </div>
+                        <p class="card-list-text">Ambulatorial, obstetrícia e hospitalar</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/receive-change.png" alt="receive-change"/>
+                            <h4>Coparticipação</h4> 
+                        </div>
+                        <p class="card-list-text">Com percentuais diferenciados.</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/place-marker--v1.png" alt="place-marker--v1"/>
+                            <h4>Abrangência</h4> 
+                        </div>
+                        <p class="card-list-text">Regional</p>
+                    </li>
+                </ul>
+                <div class="card-saiba-mais">
+                    <a href="#simuleSeuPlano">Simule seu Plano</a>
+                </div>
+            </div>
+        </div>
+        <!-- Unimed Flex -->
+        <div class="card-unimed">
+            <h2 class="card-title">Unimed Flex</h2>
+            <div class="card-body">
+                <p class="card-txt">
+                    Para você que busca saber exatamente quanto vai pagar.
+                </p>
+                <ul class="card-list">
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/occupied-bed.png" alt="occupied-bed"/>
+                            <h4>Acomodação</h4> 
+                        </div>
+                        <p class="card-list-text">Enfermaria</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/sf-regular-filled/48/ffffff/roofing.png" alt="roofing"/>
+                            <h4>Cobertura</h4> 
+                        </div>
+                        <p class="card-list-text">Ambulatorial, obstetrícia e hospitalar</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/receive-change.png" alt="receive-change"/>
+                            <h4>Coparticipação</h4> 
+                        </div>
+                        <p class="card-list-text">Fixa por grupo.</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/place-marker--v1.png" alt="place-marker--v1"/>
+                            <h4>Abrangência</h4> 
+                        </div>
+                        <p class="card-list-text">Regional</p>
+                    </li>
+                </ul>
+                <div class="card-saiba-mais">
+                    <a href="#simuleSeuPlano">Simule seu Plano</a>
+                </div>
+            </div>
+        </div>
+        <!-- Unimed Trio -->
+        <div class="card-unimed">
+            <h2 class="card-title">Unimed Trio</h2>
+            <div class="card-body">
+                <p class="card-txt">
+                    Ideal para quem precisa de cobertura em todo Estado.
+                </p>
+                <ul class="card-list">
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/occupied-bed.png" alt="occupied-bed"/>
+                            <h4>Acomodação</h4> 
+                        </div>
+                        <p class="card-list-text">Enfermaria e apartamento</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/sf-regular-filled/48/ffffff/roofing.png" alt="roofing"/>
+                            <h4>Cobertura</h4> 
+                        </div>
+                        <p class="card-list-text">Ambulatorial, obstetrícia e hospitalar</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/receive-change.png" alt="receive-change"/>
+                            <h4>Coparticipação</h4> 
+                        </div>
+                        <p class="card-list-text">Com percentuais diferenciados.</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/place-marker--v1.png" alt="place-marker--v1"/>
+                            <h4>Abrangência</h4> 
+                        </div>
+                        <p class="card-list-text">Estadual</p>
+                    </li>
+                </ul>
+                <div class="card-saiba-mais">
+                    <a href="#simuleSeuPlano">Simule seu Plano</a>
+                </div>
+            </div>
+        </div>
+        <!-- Unimed Amplo -->
+        <div class="card-unimed">
+            <h2 class="card-title">Unimed Amplo</h2>
+            <div class="card-body">
+                <p class="card-txt">
+                    Adequado para você que viaja e percorre todo Brasil.
+                </p>
+                <ul class="card-list">
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/fluency-systems-filled/48/ffffff/occupied-bed.png" alt="occupied-bed"/>
+                            <h4>Acomodação</h4> 
+                        </div>
+                        <p class="card-list-text">Enfermaria e apartamento</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/sf-regular-filled/48/ffffff/roofing.png" alt="roofing"/>
+                            <h4>Cobertura</h4> 
+                        </div>
+                        <p class="card-list-text">Ambulatorial, obstetrícia e hospitalar</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/receive-change.png" alt="receive-change"/>
+                            <h4>Coparticipação</h4> 
+                        </div>
+                        <p class="card-list-text">Com percentuais diferenciados.</p>
+                    </li>
+                    <li class="card-list-item">
+                        <div class="card-list-item-content">
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/ffffff/place-marker--v1.png" alt="place-marker--v1"/>
+                            <h4>Abrangência</h4> 
+                        </div>
+                        <p class="card-list-text">Nacional</p>
+                    </li>
+                </ul>
+                <div class="card-saiba-mais">
+                    <a href="#simuleSeuPlano">Simule seu Plano</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 

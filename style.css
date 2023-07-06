@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 60, 204, 248;
@@ -30,7 +34,7 @@ body{
     rgb(var(--background-start-rgb));
     background-repeat: no-repeat;
     color: rgb(var(--foreground-rgb));
-    
+    scroll-behavior: smooth;
     
 }
 .imgbk{
@@ -41,6 +45,19 @@ body{
     width: 550px;
     object-fit: cover;
 }
+.nav-menu{
+    display: flex;
+    gap: 20px;
+}
+.nav-menu div a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 400ms ease-in;
+}
+.nav-menu div a:hover{
+    color: rgb(4,57,209);
+}
+
 .container{
     display: flex;
     justify-content: center;
@@ -64,7 +81,7 @@ body{
     padding-right: 20px;
     
 }
-.content h2{
+.content h1{
     text-align: center;
     margin-bottom: 25px;
 }
@@ -145,7 +162,7 @@ body{
     position: -webkit-sticky; /* Necessário para funcionar no Safari */
     position: sticky;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 80px;
     background: rgb(4,57,209);
@@ -153,6 +170,7 @@ body{
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px); 
     top: 0;
+    z-index: 1000;
 }
 .brand{
     width: 150px;
@@ -191,25 +209,32 @@ select{
 
 
 .resultado{
-    margin-top: 25px;
+    margin-top: 100px;
     margin-bottom: 25px;
     max-width: fit-content;
     width: 100%;
     text-align: center;
-    background-color: #ffffff;
-    color: #0B2B40;
+    background-color: rgba(4,183,130,1);
+    color: #ffffff;
     padding: 10px;
     font-weight: 700;
+    font-size: 2.5rem;
     animation: aparecerResultado 500ms ease-in;
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 .resNone{
     display: none;
+}
+
+.txt-cta{
+    max-width: 1000px;
+    margin: 25px auto 25px auto;
 }
 
 .saibaMais{
@@ -230,8 +255,10 @@ select{
 
 .saibaMais a{
     text-decoration: none;
-    color: #0B2B40;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: rgba(4,183,130,1);
+    border: 2px solid rgba(4,183,130,1);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     font-weight: 700;
     padding: 10px;
     transition: 400ms ease;
@@ -244,8 +271,10 @@ select{
 
 .saibaMais a:hover{
     color: #ffffff;
-    background-color: transparent;
+    background-color: rgba(4,183,130,1);
     border: 2px solid rgba(4,183,130,1);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    transform: scale(1.05);
 
 }
 
@@ -254,6 +283,102 @@ select{
     text-align: center;
 }
 
+
+/* Conheça os tipos de planos */
+/* Aqui vou criar os cards explicando o que cada plano tem */
+.planosTitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planosArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1440px;
+    margin: 50px auto 50px auto;
+    min-height: 100vh;
+}
+
+.card-unimed{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    max-width: 400px;
+    width: 100%;
+    height: 420px;
+
+    border-radius: 25px;
+    padding: 10px 15px 10px 15px;
+    /* Glassmorphism */
+    background: linear-gradient(140deg, rgba(4,57,209, 0.25) 0%, rgba(4,183,130,0.25) 100%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card-title{
+    font-weight: 700;
+}
+.card-txt{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.card-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-list-item{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card-list-item-content{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.card-list-text{
+    font-size: 12px;
+}
+
+.card-saiba-mais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-saiba-mais a{
+    text-decoration: none;
+    background-color: rgba(4,183,130,1);
+    color: #ffffff;
+    box-shadow: #0b2b4036 2px 5px 20px;
+    padding: 10px;
+    transition: 400ms ease-in;
+    border: 1px solid transparent;
+}
+
+.card-saiba-mais a:hover{
+    color: rgba(4, 183, 130, 1);
+    background-color: transparent;
+    border: 1px solid rgba(4, 183, 130, 1);
+}
 
 
 

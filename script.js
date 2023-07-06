@@ -371,11 +371,13 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             `
             resultado.classList.add('resultado')
             var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
             saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
             saibaMais.classList.add('saibaMais')
             var cta = document.getElementById('cta')
-            cta.innerHTML = `<p>${textCTA}</p>`
-            resultado.scrollIntoView({behavior:"smooth"})
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
+            
 
 
             
