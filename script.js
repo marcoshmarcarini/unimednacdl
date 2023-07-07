@@ -6,7 +6,7 @@
     Os dados que devem ser obtidos são, a quantidade de 
     colaboradores, porque de acordo com ela, será criada utilizada
     uma nova tabela de preços. 
-    A faixa etária de cada funcionário, no caso, quantos funcionários
+    A faixa etária de cada funcionário, no caso, quantos pessoas
     dentro de cada faixa etária. 
     E ai usar o código para criar os valores. 
 
@@ -357,7 +357,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -401,7 +401,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -465,7 +465,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -505,7 +505,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -566,7 +566,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -606,7 +606,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -646,7 +646,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -686,7 +686,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -726,7 +726,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -766,7 +766,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -806,7 +806,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -846,7 +846,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -886,7 +886,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -926,7 +926,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -966,7 +966,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
@@ -1006,7 +1006,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
-            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20funcionários%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
             var url = `https://wa.me/5528998831600/?text=${textRes}`
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
