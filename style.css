@@ -157,6 +157,7 @@ body{
     gap: 20px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 .logoArea{
     position: -webkit-sticky; /* Necessário para funcionar no Safari */
