@@ -30,8 +30,8 @@ var nummais59 = 0
 var valorSimulado = 0
 var valorSimuladoUnimed = 0
 
-var personal = 0
-var personalA = 0
+var Personal = 0
+var PersonalA = 0
 var UniTeen = 0
 var UniTeenRD = 0
 var UniTeenRDA = 0
@@ -43,6 +43,19 @@ var UniTrio = 0
 var UniTrioRD = 0
 var UniAmplo1 = 0
 
+var unimedPersonal = 0
+var unimedPersonalA = 0
+var unimedUniTeen = 0
+var unimedUniTeenRD = 0
+var unimedUniTeenRDA = 0
+var unimedFlex2 = 0
+var unimedFlexA2 = 0
+var unimedFlex3 = 0
+var unimedFlexA3 = 0
+var unimedUniTrio = 0
+var unimedUniTrioRD = 0
+var unimedUniAmplo1 = 0
+
 
 /* Criando Objetos */
 /* 
@@ -51,7 +64,7 @@ var UniAmplo1 = 0
     *************************************  
 */
 
-personal = {
+Personal = {
     qColetivo: {
         ate18: 179.79,
         ate23: 201.94,
@@ -66,7 +79,7 @@ personal = {
     }
 }
 
-personalA = {
+PersonalA = {
     qColetivo: {
         ate18: 179.79,
         ate23: 255.31,
@@ -218,7 +231,7 @@ FlexA3 = {
         ate48: 430.92,
         ate53: 560.17,
         ate58: 750.65,
-        mais59: 1028.39
+        mais59: 1028.36
     }
 }
 
@@ -573,12 +586,11 @@ unimedUniAmplo1 = {
 document.getElementById('simulador').addEventListener("submit", (e) => {
     e.preventDefault()
 
-    var tipoPlano = document.querySelectorAll('#tipo-plano')
+    var tipoPlano = document.getElementsByName('tipodeplano')
     tipoPlano.toString()
-
+    console.log(tipoPlano[0].checked, tipoPlano[1].checked)
+    
     var selectProduto = document.querySelector('[name=produtos]').value
-    console.log(typeof(selectProduto))
-    console.log(typeof(tipoPlano))
 
     numate18 = document.getElementById('num0a18').value
     numate23 = document.getElementById('num19a23').value
@@ -600,27 +612,49 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         var valorSosuni = 0
         var valorPlanoMedicamentos = 0
         var valorProteFamiliar = 0
-        var unimedValorSosuni = 13.59
+        var unimedValorSosuni = 0
         var unimedValorPlanoMedicamentos = 5.07
         var unimedValorProteFamiliar = 7.59
 
-        sosuni.checked ? valorSosuni = sosuni.getAttribute('preco') : valorSosuni = 0
-        planoMedicamentos.checked ? valorPlanoMedicamentos = planoMedicamentos.getAttribute('preco') : valorPlanoMedicamentos = 0
-        proteFamiliar.checked ? valorProteFamiliar = proteFamiliar.getAttribute('preco') : valorProteFamiliar = 0
+        
+        if(sosuni.checked){
+            valorSosuni = sosuni.getAttribute('preco')
+            unimedValorSosuni = 13.59
+        }else{
+            valorSosuni = 0
+            unimedValorSosuni = 0
+        }
 
-        if(tipoPlano[i].defaultValue === 'QColetivo' && selectProduto === 'Personal'){
+        if(planoMedicamentos.checked){
+            valorPlanoMedicamentos = planoMedicamentos.getAttribute('preco')
+            unimedValorPlanoMedicamentos = 5.07
+        }else{
+            valorPlanoMedicamentos = 0
+            unimedValorPlanoMedicamentos = 0
+        }
+
+        if(proteFamiliar.checked){
+            valorProteFamiliar = proteFamiliar.getAttribute('preco')
+            unimedValorProteFamiliar = 7.59
+        }else{
+            valorProteFamiliar = 0
+            unimedValorProteFamiliar = 0
+        }
+
+
+        if(tipoPlano[i].checked && tipoPlano[i].defaultValue === 'QColetivo' && selectProduto === 'Personal'){
             
             valorSimulado = (
-                (personal.qColetivo.ate18 * numate18) +
-                (personal.qColetivo.ate23 * numate23) +
-                (personal.qColetivo.ate28 * numate28) + 
-                (personal.qColetivo.ate33 * numate33) +
-                (personal.qColetivo.ate38 * numate38) +
-                (personal.qColetivo.ate43 * numate43) +
-                (personal.qColetivo.ate48 * numate48) +
-                (personal.qColetivo.ate53 * numate53) +
-                (personal.qColetivo.ate58 * numate58) +
-                (personal.qColetivo.mais59 * nummais59) + 
+                (Personal.qColetivo.ate18 * numate18) +
+                (Personal.qColetivo.ate23 * numate23) +
+                (Personal.qColetivo.ate28 * numate28) + 
+                (Personal.qColetivo.ate33 * numate33) +
+                (Personal.qColetivo.ate38 * numate38) +
+                (Personal.qColetivo.ate43 * numate43) +
+                (Personal.qColetivo.ate48 * numate48) +
+                (Personal.qColetivo.ate53 * numate53) +
+                (Personal.qColetivo.ate58 * numate58) +
+                (Personal.qColetivo.mais59 * nummais59) + 
                 Number(valorSosuni) + 
                 Number(valorProteFamiliar) + 
                 Number(valorPlanoMedicamentos)
@@ -676,19 +710,19 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
 
 
             
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'PersonalA'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'PersonalA'){
             
             valorSimulado = (
-                (personalA.qColetivo.ate18 * numate18) +
-                (personalA.qColetivo.ate23 * numate23) +
-                (personalA.qColetivo.ate28 * numate28) + 
-                (personalA.qColetivo.ate33 * numate33) +
-                (personalA.qColetivo.ate38 * numate38) +
-                (personalA.qColetivo.ate43 * numate43) +
-                (personalA.qColetivo.ate48 * numate48) +
-                (personalA.qColetivo.ate53 * numate53) +
-                (personalA.qColetivo.ate58 * numate58) +
-                (personalA.qColetivo.mais59 * nummais59) + 
+                (PersonalA.qColetivo.ate18 * numate18) +
+                (PersonalA.qColetivo.ate23 * numate23) +
+                (PersonalA.qColetivo.ate28 * numate28) + 
+                (PersonalA.qColetivo.ate33 * numate33) +
+                (PersonalA.qColetivo.ate38 * numate38) +
+                (PersonalA.qColetivo.ate43 * numate43) +
+                (PersonalA.qColetivo.ate48 * numate48) +
+                (PersonalA.qColetivo.ate53 * numate53) +
+                (PersonalA.qColetivo.ate58 * numate58) +
+                (PersonalA.qColetivo.mais59 * nummais59) + 
                 Number(valorSosuni) + 
                 Number(valorProteFamiliar) + 
                 Number(valorPlanoMedicamentos)
@@ -741,7 +775,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
             
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeen'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeen'){
             console.log(tipoPlano[i].value)
             console.log(typeof(tipoPlano[i]))
 
@@ -808,7 +842,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeen'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeen'){
             valorSimulado = (
                 (UniTeen.qIndividual.ate18 * numate18) +
                 (UniTeen.qIndividual.ate23 * numate23) +
@@ -872,7 +906,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRD'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
                 (UniTeenRD.qColetivo.ate18 * numate18) +
                 (UniTeenRD.qColetivo.ate23 * numate23) +
@@ -936,7 +970,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRD'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRD'){
             valorSimulado = (
                 (UniTeenRD.qIndividual.ate18 * numate18) +
                 (UniTeenRD.qIndividual.ate23 * numate23) +
@@ -1000,7 +1034,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRDA'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRDA'){
             valorSimulado = (
                 (UniTeenRDA.qColetivo.ate18 * numate18) +
                 (UniTeenRDA.qColetivo.ate23 * numate23) +
@@ -1064,7 +1098,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRDA'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeenRDA'){
             valorSimulado = (
                 (UniTeenRDA.qIndividual.ate18 * numate18) +
                 (UniTeenRDA.qIndividual.ate23 * numate23) +
@@ -1128,7 +1162,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex2'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex2'){
             valorSimulado = (
                 (Flex2.qColetivo.ate18 * numate18) +
                 (Flex2.qColetivo.ate23 * numate23) +
@@ -1192,7 +1226,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA2'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA2'){
             valorSimulado = (
                 (FlexA2.qColetivo.ate18 * numate18) +
                 (FlexA2.qColetivo.ate23 * numate23) +
@@ -1256,7 +1290,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex3'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'Flex3'){
             valorSimulado = (
                 (Flex3.qColetivo.ate18 * numate18) +
                 (Flex3.qColetivo.ate23 * numate23) +
@@ -1320,7 +1354,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA3'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'FlexA3'){
             valorSimulado = (
                 (FlexA3.qColetivo.ate18 * numate18) +
                 (FlexA3.qColetivo.ate23 * numate23) +
@@ -1384,7 +1418,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrio'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrio'){
             valorSimulado = (
                 (UniTrio.qColetivo.ate18 * numate18) +
                 (UniTrio.qColetivo.ate23 * numate23) +
@@ -1448,7 +1482,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrio'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrio'){
             valorSimulado = (
                 (UniTrio.qIndividual.ate18 * numate18) +
                 (UniTrio.qIndividual.ate23 * numate23) +
@@ -1512,7 +1546,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrioRD'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
                 (UniTrioRD.qColetivo.ate18 * numate18) +
                 (UniTrioRD.qColetivo.ate23 * numate23) +
@@ -1576,7 +1610,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrioRD'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTrioRD'){
             valorSimulado = (
                 (UniTrioRD.qIndividual.ate18 * numate18) +
                 (UniTrioRD.qIndividual.ate23 * numate23) +
@@ -1640,7 +1674,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniAmplo1'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
                 (UniAmplo1.qColetivo.ate18 * numate18) +
                 (UniAmplo1.qColetivo.ate23 * numate23) +
@@ -1704,7 +1738,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
             rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
-        }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniAmplo1'){
+        }else if(tipoPlano[i].checked && tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniAmplo1'){
             valorSimulado = (
                 (UniAmplo1.qIndividual.ate18 * numate18) +
                 (UniAmplo1.qIndividual.ate23 * numate23) +
