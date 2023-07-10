@@ -28,6 +28,7 @@ var numate58 = 0
 var nummais59 = 0
 
 var valorSimulado = 0
+var valorSimuladoUnimed = 0
 
 var personal = 0
 var personalA = 0
@@ -44,6 +45,11 @@ var UniAmplo1 = 0
 
 
 /* Criando Objetos */
+/* 
+    *************************************
+    * Tabela de Praços da CDL Corretora *
+    *************************************  
+*/
 
 personal = {
     qColetivo: {
@@ -298,12 +304,274 @@ UniAmplo1 = {
 }
 /*var numFuncionarios = document.querySelector('#funcionarios').value*/
 
+/*
+    ******************************  
+    * Tabela de Preços da Unimed *
+    ******************************
+ */ 
+
+unimedPersonal = {
+    qColetivo: {
+        ate18: 205.07,
+        ate23: 229.68,
+        ate28: 264.13,
+        ate33: 290.56,
+        ate38: 342.87,
+        ate43: 394.31,
+        ate48: 512.61,
+        ate53: 666.42,
+        ate58: 892.98,
+        mais59: 1223.41
+    }
+}
+
+unimedPersonalA = {
+    qColetivo: {
+        ate18: 205.07,
+        ate23: 291.19,
+        ate28: 291.19,
+        ate33: 291.19,
+        ate38: 291.19,
+        ate43: 291.19,
+        ate48: 512.61,
+        ate53: 666.42,
+        ate58: 892.98,
+        mais59: 1223.41
+    }
+}
+
+unimedUniTeen = {
+    qColetivo: {
+        ate18: 176.13,
+        ate23: 197.25,
+        ate28: 226.83,
+        ate33: 249.51,
+        ate38: 294.51,
+        ate43: 338.58,
+        ate48: 440.14,
+        ate53: 572.17,
+        ate58: 766.69,
+        mais59: 1050.35
+    },
+    qIndividual: {
+        ate18: 255.38,
+        ate23: 286.02,
+        ate28: 328.91,
+        ate33: 361.79,
+        ate38: 426.92,
+        ate43: 490.94,
+        ate48: 638.20,
+        ate53: 829.64,
+        ate58: 1111.70,
+        mais59: 1523.00
+    }
+}
+
+unimedUniTeenRD = {
+    qColetivo: {
+        ate18: 144.44,
+        ate23: 161.78,
+        ate28: 186.04,
+        ate33: 204.64,
+        ate38: 241.46,
+        ate43: 277.67,
+        ate48: 360.96,
+        ate53: 469.24,
+        ate58: 628.77,
+        mais59: 861.43
+    },
+    qIndividual: {
+        ate18: 209.44,
+        ate23: 234.58,
+        ate28: 269.76,
+        ate33: 296.72,
+        ate38: 350.12,
+        ate43: 402.62,
+        ate48: 523.39,
+        ate53: 680.40,
+        ate58: 911.72,
+        mais59: 1249.07
+    }
+}
+
+unimedUniTeenRDA = {
+    qColetivo: {
+        ate18: 144.44,
+        ate23: 205.10,
+        ate28: 205.10,
+        ate33: 205.10,
+        ate38: 205.10,
+        ate43: 205.10,
+        ate48: 360.96,
+        ate53: 469.24,
+        ate58: 628.77,
+        mais59: 861.43
+    },
+    qIndividual: {
+        ate18: 209.44,
+        ate23: 297.40,
+        ate28: 297.40,
+        ate33: 297.40,
+        ate38: 397.40,
+        ate43: 497.40,
+        ate48: 523.39,
+        ate53: 680.40,
+        ate58: 911.72,
+        mais59: 1249.07
+    }
+}
+
+unimedFlex2 = {
+    qColetivo: {
+        ate18: 211.51,
+        ate23: 236.89,
+        ate28: 272.41,
+        ate33: 299.65,
+        ate38: 353.57,
+        ate43: 406.60,
+        ate48: 528.56,
+        ate53: 687.10,
+        ate58: 920.69,
+        mais59: 1261.38
+    }
+}
+
+unimedFlexA2 = {
+    qColetivo: {
+        ate18: 211.51,
+        ate23: 287.81,
+        ate28: 287.81,
+        ate33: 287.81,
+        ate38: 287.81,
+        ate43: 287.81,
+        ate48: 528.56,
+        ate53: 687.10,
+        ate58: 920.69,
+        mais59: 1261.38
+    }
+}
+
+unimedFlex3 = {
+    qColetivo: {
+        ate18: 183.69,
+        ate23: 205.73,
+        ate28: 236.58,
+        ate33: 260.21,
+        ate38: 307.02,
+        ate43: 353.06,
+        ate48: 458.99,
+        ate53: 596.68,
+        ate58: 799.63,
+        mais59: 1095.47
+    }
+}
+
+unimedFlexA3 = {
+    qColetivo: {
+        ate18: 183.69,
+        ate23: 249.95,
+        ate28: 249.95,
+        ate33: 249.95,
+        ate38: 249.95,
+        ate43: 249.95,
+        ate48: 458.99,
+        ate53: 596.68,
+        ate58: 799.63,
+        mais59: 1095.47
+    }
+}
+
+unimedUniTrio = {
+    qColetivo: {
+        ate18: 267.54,
+        ate23: 299.64,
+        ate28: 344.59,
+        ate33: 379.04,
+        ate38: 447.27,
+        ate43: 514.36,
+        ate48: 668.67,
+        ate53: 869.28,
+        ate58: 1164.83,
+        mais59: 1595.82
+    },
+    qIndividual: {
+        ate18: 387.93,
+        ate23: 434.48,
+        ate28: 499.65,
+        ate33: 549.62,
+        ate38: 648.55,
+        ate43: 745.83,
+        ate48: 969.58,
+        ate53: 1260.45,
+        ate58: 1689.00,
+        mais59: 2313.93
+    }
+}
+
+unimedUniTrioRD = {
+    qColetivo: {
+        ate18: 186.07,
+        ate23: 208.39,
+        ate28: 239.65,
+        ate33: 263.62,
+        ate38: 311.07,
+        ate43: 357.73,
+        ate48: 465.05,
+        ate53: 604.56,
+        ate58: 810.12,
+        mais59: 1109.86
+    },
+    qIndividual: {
+        ate18: 269.80,
+        ate23: 302.17,
+        ate28: 347.49,
+        ate33: 382.25,
+        ate38: 451.05,
+        ate43: 518.71,
+        ate48: 674.32,
+        ate53: 876.61,
+        ate58: 1174.67,
+        mais59: 1609.30
+    }
+}
+
+unimedUniAmplo1 = {
+    qColetivo: {
+        ate18: 248.83,
+        ate23: 278.69,
+        ate28: 320.50,
+        ate33: 352.55,
+        ate38: 416.01,
+        ate43: 478.41,
+        ate48: 621.93,
+        ate53: 808.51,
+        ate58: 1083.40,
+        mais59: 1484.26
+    },
+    qIndividual: {
+        ate18: 360.81,
+        ate23: 404.11,
+        ate28: 464.72,
+        ate33: 511.19,
+        ate38: 603.21,
+        ate43: 693.69,
+        ate48: 901.80,
+        ate53: 1172.34,
+        ate58: 1570.93,
+        mais59: 2152.18
+    }
+}
+
+
+
+
+
+
 
 /* Função do Formulário */
 
 document.getElementById('simulador').addEventListener("submit", (e) => {
     e.preventDefault()
-
 
     var tipoPlano = document.querySelectorAll('#tipo-plano')
     tipoPlano.toString()
@@ -332,6 +600,9 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         var valorSosuni = 0
         var valorPlanoMedicamentos = 0
         var valorProteFamiliar = 0
+        var unimedValorSosuni = 13.59
+        var unimedValorPlanoMedicamentos = 5.07
+        var unimedValorProteFamiliar = 7.59
 
         sosuni.checked ? valorSosuni = sosuni.getAttribute('preco') : valorSosuni = 0
         planoMedicamentos.checked ? valorPlanoMedicamentos = planoMedicamentos.getAttribute('preco') : valorPlanoMedicamentos = 0
@@ -355,6 +626,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedPersonal.qColetivo.ate18 * numate18) +
+                (unimedPersonal.qColetivo.ate23 * numate23) +
+                (unimedPersonal.qColetivo.ate28 * numate28) + 
+                (unimedPersonal.qColetivo.ate33 * numate33) +
+                (unimedPersonal.qColetivo.ate38 * numate38) +
+                (unimedPersonal.qColetivo.ate43 * numate43) +
+                (unimedPersonal.qColetivo.ate48 * numate48) +
+                (unimedPersonal.qColetivo.ate53 * numate53) +
+                (unimedPersonal.qColetivo.ate58 * numate58) +
+                (unimedPersonal.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorPlanoMedicamentos) + 
+                Number(unimedValorProteFamiliar)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -362,9 +649,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -399,6 +694,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedPersonalA.qColetivo.ate18 * numate18) +
+                (unimedPersonalA.qColetivo.ate23 * numate23) +
+                (unimedPersonalA.qColetivo.ate28 * numate28) + 
+                (unimedPersonalA.qColetivo.ate33 * numate33) +
+                (unimedPersonalA.qColetivo.ate38 * numate38) +
+                (unimedPersonalA.qColetivo.ate43 * numate43) +
+                (unimedPersonalA.qColetivo.ate48 * numate48) +
+                (unimedPersonalA.qColetivo.ate53 * numate53) +
+                (unimedPersonalA.qColetivo.ate58 * numate58) +
+                (unimedPersonalA.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -406,9 +717,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -442,9 +761,52 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeen.qColetivo.ate18 * numate18) +
+                (unimedUniTeen.qColetivo.ate23 * numate23) +
+                (unimedUniTeen.qColetivo.ate28 * numate28) + 
+                (unimedUniTeen.qColetivo.ate33 * numate33) +
+                (unimedUniTeen.qColetivo.ate38 * numate38) +
+                (unimedUniTeen.qColetivo.ate43 * numate43) +
+                (unimedUniTeen.qColetivo.ate48 * numate48) +
+                (unimedUniTeen.qColetivo.ate53 * numate53) +
+                (unimedUniTeen.qColetivo.ate58 * numate58) +
+                (unimedUniTeen.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QIndividual' && selectProduto === 'UniTeen'){
             valorSimulado = (
@@ -463,6 +825,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeen.qIndividual.ate18 * numate18) +
+                (unimedUniTeen.qIndividual.ate23 * numate23) +
+                (unimedUniTeen.qIndividual.ate28 * numate28) + 
+                (unimedUniTeen.qIndividual.ate33 * numate33) +
+                (unimedUniTeen.qIndividual.ate38 * numate38) +
+                (unimedUniTeen.qIndividual.ate43 * numate43) +
+                (unimedUniTeen.qIndividual.ate48 * numate48) +
+                (unimedUniTeen.qIndividual.ate53 * numate53) +
+                (unimedUniTeen.qIndividual.ate58 * numate58) +
+                (unimedUniTeen.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -470,9 +848,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -503,6 +889,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeenRD.qColetivo.ate18 * numate18) +
+                (unimedUniTeenRD.qColetivo.ate23 * numate23) +
+                (unimedUniTeenRD.qColetivo.ate28 * numate28) + 
+                (unimedUniTeenRD.qColetivo.ate33 * numate33) +
+                (unimedUniTeenRD.qColetivo.ate38 * numate38) +
+                (unimedUniTeenRD.qColetivo.ate43 * numate43) +
+                (unimedUniTeenRD.qColetivo.ate48 * numate48) +
+                (unimedUniTeenRD.qColetivo.ate53 * numate53) +
+                (unimedUniTeenRD.qColetivo.ate58 * numate58) +
+                (unimedUniTeenRD.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -510,9 +912,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -543,9 +953,52 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeenRD.qIndividual.ate18 * numate18) +
+                (unimedUniTeenRD.qIndividual.ate23 * numate23) +
+                (unimedUniTeenRD.qIndividual.ate28 * numate28) + 
+                (unimedUniTeenRD.qIndividual.ate33 * numate33) +
+                (unimedUniTeenRD.qIndividual.ate38 * numate38) +
+                (unimedUniTeenRD.qIndividual.ate43 * numate43) +
+                (unimedUniTeenRD.qIndividual.ate48 * numate48) +
+                (unimedUniTeenRD.qIndividual.ate53 * numate53) +
+                (unimedUniTeenRD.qIndividual.ate58 * numate58) +
+                (unimedUniTeenRD.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
-            resultado.innerHTML = `R$${Number(valorSimulado).toFixed(2).replace(".", ",")}`
+            var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
+            var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
+            var url = `https://wa.me/5528998831600/?text=${textRes}`
+            var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
+            resultado.innerHTML = 
+            `
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
+                    <p> 
+                        R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+                
+            `
             resultado.classList.add('resultado')
+            var saibaMais = document.getElementById('saibaMais')
+            var rolarAteAqui = document.getElementById('rolarAteAqui')
+            saibaMais.innerHTML = `<a href="${url}" target="_blank" class="" id="saibaMais">Saiba Mais</a>`
+            saibaMais.classList.add('saibaMais')
+            var cta = document.getElementById('cta')
+            cta.innerHTML = `<p class="txt-cta">${textCTA}</p>`
+            rolarAteAqui.scrollIntoView({behavior:"smooth"})
 
         }else if(tipoPlano[i].value === 'QColetivo' && selectProduto === 'UniTeenRDA'){
             valorSimulado = (
@@ -564,6 +1017,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeenRDA.qColetivo.ate18 * numate18) +
+                (unimedUniTeenRDA.qColetivo.ate23 * numate23) +
+                (unimedUniTeenRDA.qColetivo.ate28 * numate28) + 
+                (unimedUniTeenRDA.qColetivo.ate33 * numate33) +
+                (unimedUniTeenRDA.qColetivo.ate38 * numate38) +
+                (unimedUniTeenRDA.qColetivo.ate43 * numate43) +
+                (unimedUniTeenRDA.qColetivo.ate48 * numate48) +
+                (unimedUniTeenRDA.qColetivo.ate53 * numate53) +
+                (unimedUniTeenRDA.qColetivo.ate58 * numate58) +
+                (unimedUniTeenRDA.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -571,9 +1040,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -604,6 +1081,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTeenRDA.qIndividual.ate18 * numate18) +
+                (unimedUniTeenRDA.qIndividual.ate23 * numate23) +
+                (unimedUniTeenRDA.qIndividual.ate28 * numate28) + 
+                (unimedUniTeenRDA.qIndividual.ate33 * numate33) +
+                (unimedUniTeenRDA.qIndividual.ate38 * numate38) +
+                (unimedUniTeenRDA.qIndividual.ate43 * numate43) +
+                (unimedUniTeenRDA.qIndividual.ate48 * numate48) +
+                (unimedUniTeenRDA.qIndividual.ate53 * numate53) +
+                (unimedUniTeenRDA.qIndividual.ate58 * numate58) +
+                (unimedUniTeenRDA.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -611,9 +1104,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -644,6 +1145,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedFlex2.qColetivo.ate18 * numate18) +
+                (unimedFlex2.qColetivo.ate23 * numate23) +
+                (unimedFlex2.qColetivo.ate28 * numate28) + 
+                (unimedFlex2.qColetivo.ate33 * numate33) +
+                (unimedFlex2.qColetivo.ate38 * numate38) +
+                (unimedFlex2.qColetivo.ate43 * numate43) +
+                (unimedFlex2.qColetivo.ate48 * numate48) +
+                (unimedFlex2.qColetivo.ate53 * numate53) +
+                (unimedFlex2.qColetivo.ate58 * numate58) +
+                (unimedFlex2.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -651,9 +1168,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -684,6 +1209,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedFlexA2.qColetivo.ate18 * numate18) +
+                (unimedFlexA2.qColetivo.ate23 * numate23) +
+                (unimedFlexA2.qColetivo.ate28 * numate28) + 
+                (unimedFlexA2.qColetivo.ate33 * numate33) +
+                (unimedFlexA2.qColetivo.ate38 * numate38) +
+                (unimedFlexA2.qColetivo.ate43 * numate43) +
+                (unimedFlexA2.qColetivo.ate48 * numate48) +
+                (unimedFlexA2.qColetivo.ate53 * numate53) +
+                (unimedFlexA2.qColetivo.ate58 * numate58) +
+                (unimedFlexA2.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -691,9 +1232,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -724,6 +1273,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedFlex3.qColetivo.ate18 * numate18) +
+                (unimedFlex3.qColetivo.ate23 * numate23) +
+                (unimedFlex3.qColetivo.ate28 * numate28) + 
+                (unimedFlex3.qColetivo.ate33 * numate33) +
+                (unimedFlex3.qColetivo.ate38 * numate38) +
+                (unimedFlex3.qColetivo.ate43 * numate43) +
+                (unimedFlex3.qColetivo.ate48 * numate48) +
+                (unimedFlex3.qColetivo.ate53 * numate53) +
+                (unimedFlex3.qColetivo.ate58 * numate58) +
+                (unimedFlex3.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -731,9 +1296,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -764,6 +1337,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedFlexA3.qColetivo.ate18 * numate18) +
+                (unimedFlexA3.qColetivo.ate23 * numate23) +
+                (unimedFlexA3.qColetivo.ate28 * numate28) + 
+                (unimedFlexA3.qColetivo.ate33 * numate33) +
+                (unimedFlexA3.qColetivo.ate38 * numate38) +
+                (unimedFlexA3.qColetivo.ate43 * numate43) +
+                (unimedFlexA3.qColetivo.ate48 * numate48) +
+                (unimedFlexA3.qColetivo.ate53 * numate53) +
+                (unimedFlexA3.qColetivo.ate58 * numate58) +
+                (unimedFlexA3.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -771,9 +1360,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -804,6 +1401,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTrio.qColetivo.ate18 * numate18) +
+                (unimedUniTrio.qColetivo.ate23 * numate23) +
+                (unimedUniTrio.qColetivo.ate28 * numate28) + 
+                (unimedUniTrio.qColetivo.ate33 * numate33) +
+                (unimedUniTrio.qColetivo.ate38 * numate38) +
+                (unimedUniTrio.qColetivo.ate43 * numate43) +
+                (unimedUniTrio.qColetivo.ate48 * numate48) +
+                (unimedUniTrio.qColetivo.ate53 * numate53) +
+                (unimedUniTrio.qColetivo.ate58 * numate58) +
+                (unimedUniTrio.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -811,9 +1424,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -844,6 +1465,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTrio.qIndividual.ate18 * numate18) +
+                (unimedUniTrio.qIndividual.ate23 * numate23) +
+                (unimedUniTrio.qIndividual.ate28 * numate28) + 
+                (unimedUniTrio.qIndividual.ate33 * numate33) +
+                (unimedUniTrio.qIndividual.ate38 * numate38) +
+                (unimedUniTrio.qIndividual.ate43 * numate43) +
+                (unimedUniTrio.qIndividual.ate48 * numate48) +
+                (unimedUniTrio.qIndividual.ate53 * numate53) +
+                (unimedUniTrio.qIndividual.ate58 * numate58) +
+                (unimedUniTrio.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -851,9 +1488,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -884,6 +1529,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTrioRD.qColetivo.ate18 * numate18) +
+                (unimedUniTrioRD.qColetivo.ate23 * numate23) +
+                (unimedUniTrioRD.qColetivo.ate28 * numate28) + 
+                (unimedUniTrioRD.qColetivo.ate33 * numate33) +
+                (unimedUniTrioRD.qColetivo.ate38 * numate38) +
+                (unimedUniTrioRD.qColetivo.ate43 * numate43) +
+                (unimedUniTrioRD.qColetivo.ate48 * numate48) +
+                (unimedUniTrioRD.qColetivo.ate53 * numate53) +
+                (unimedUniTrioRD.qColetivo.ate58 * numate58) +
+                (unimedUniTrioRD.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -891,9 +1552,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -924,6 +1593,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniTrioRD.qIndividual.ate18 * numate18) +
+                (unimedUniTrioRD.qIndividual.ate23 * numate23) +
+                (unimedUniTrioRD.qIndividual.ate28 * numate28) + 
+                (unimedUniTrioRD.qIndividual.ate33 * numate33) +
+                (unimedUniTrioRD.qIndividual.ate38 * numate38) +
+                (unimedUniTrioRD.qIndividual.ate43 * numate43) +
+                (unimedUniTrioRD.qIndividual.ate48 * numate48) +
+                (unimedUniTrioRD.qIndividual.ate53 * numate53) +
+                (unimedUniTrioRD.qIndividual.ate58 * numate58) +
+                (unimedUniTrioRD.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -931,9 +1616,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -964,6 +1657,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniAmplo1.qColetivo.ate18 * numate18) +
+                (unimedUniAmplo1.qColetivo.ate23 * numate23) +
+                (unimedUniAmplo1.qColetivo.ate28 * numate28) + 
+                (unimedUniAmplo1.qColetivo.ate33 * numate33) +
+                (unimedUniAmplo1.qColetivo.ate38 * numate38) +
+                (unimedUniAmplo1.qColetivo.ate43 * numate43) +
+                (unimedUniAmplo1.qColetivo.ate48 * numate48) +
+                (unimedUniAmplo1.qColetivo.ate53 * numate53) +
+                (unimedUniAmplo1.qColetivo.ate58 * numate58) +
+                (unimedUniAmplo1.qColetivo.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -971,9 +1680,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
@@ -1004,6 +1721,22 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 Number(valorPlanoMedicamentos)
             )
 
+            valorSimuladoUnimed = (
+                (unimedUniAmplo1.qIndividual.ate18 * numate18) +
+                (unimedUniAmplo1.qIndividual.ate23 * numate23) +
+                (unimedUniAmplo1.qIndividual.ate28 * numate28) + 
+                (unimedUniAmplo1.qIndividual.ate33 * numate33) +
+                (unimedUniAmplo1.qIndividual.ate38 * numate38) +
+                (unimedUniAmplo1.qIndividual.ate43 * numate43) +
+                (unimedUniAmplo1.qIndividual.ate48 * numate48) +
+                (unimedUniAmplo1.qIndividual.ate53 * numate53) +
+                (unimedUniAmplo1.qIndividual.ate58 * numate58) +
+                (unimedUniAmplo1.qIndividual.mais59 * nummais59) + 
+                Number(unimedValorSosuni) + 
+                Number(unimedValorProteFamiliar) + 
+                Number(unimedValorPlanoMedicamentos)
+            )
+
             var resultado = document.getElementById('resultado')
             var numFuncionarios = Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59)
             var textRes = `Olá!%20Tenho%20uma%20empresa%20de%20${numFuncionarios}%20pessoas%20e%20escolhi%20o%20produto%20${selectProduto}.%20Quero%20mais%20informações.`
@@ -1011,9 +1744,17 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
             var textCTA = `Quer saber mais? Clique no link abaixo e converse com um de nossos colaboradores para obter mais informações sobre o plano.`
             resultado.innerHTML = 
             `
-                <div class="">   
+                <div class="resPreco">  
+                    <p>Preço na CDL Corretora:</p> 
                     <p> 
                         R$${Number(valorSimulado).toFixed(2).replace(".", ",")}
+                    </p>
+                </div>
+
+                <div class="resPreco">
+                    <p>Preço em outras Corretoras:</p>    
+                    <p> 
+                        R$${Number(valorSimuladoUnimed).toFixed(2).replace(".", ",")}
                     </p>
                 </div>
                 
