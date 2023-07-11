@@ -331,7 +331,7 @@ unimedPersonal = {
         ate33: 290.56,
         ate38: 342.87,
         ate43: 394.31,
-        ate48: 512.61,
+        ate48: 512.63,
         ate53: 666.42,
         ate58: 892.98,
         mais59: 1223.41
@@ -346,7 +346,7 @@ unimedPersonalA = {
         ate33: 291.19,
         ate38: 291.19,
         ate43: 291.19,
-        ate48: 512.61,
+        ate48: 512.63,
         ate53: 666.42,
         ate58: 892.98,
         mais59: 1223.41
@@ -359,7 +359,7 @@ unimedUniTeen = {
         ate23: 197.25,
         ate28: 226.83,
         ate33: 249.51,
-        ate38: 294.51,
+        ate38: 294.42,
         ate43: 338.58,
         ate48: 440.14,
         ate53: 572.17,
@@ -425,8 +425,8 @@ unimedUniTeenRDA = {
         ate23: 297.40,
         ate28: 297.40,
         ate33: 297.40,
-        ate38: 397.40,
-        ate43: 497.40,
+        ate38: 297.40,
+        ate43: 297.40,
         ate48: 523.39,
         ate53: 680.40,
         ate58: 911.72,
@@ -457,8 +457,8 @@ unimedFlexA2 = {
         ate33: 287.81,
         ate38: 287.81,
         ate43: 287.81,
-        ate48: 528.56,
-        ate53: 687.10,
+        ate48: 528.52,
+        ate53: 687.06,
         ate58: 920.69,
         mais59: 1261.38
     }
@@ -575,8 +575,20 @@ unimedUniAmplo1 = {
     }
 }
 
+/* Interação dentro do formulário antes de alterar */
 
 
+function handleHideButton(){
+
+    var btnProdutos = document.getElementsByName('produtos')[0]
+    var btnTipoPlano = document.getElementsByClassName('tipo-plano')
+
+    if(btnProdutos.value == 'Personal' || btnProdutos.value == 'PersonalA'){
+        btnTipoPlano[0].children[1].classList.add('d-none')
+    }else{
+        btnTipoPlano[0].children[1].classList.remove('d-none')
+    }
+}
 
 
 

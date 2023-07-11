@@ -438,6 +438,10 @@ select{
     transform: scale(1.05);
 }
 
+.d-none{
+    display: none !important;
+}
+
 
 @keyframes animarBK {
     0%{
