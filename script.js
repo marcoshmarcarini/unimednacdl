@@ -576,8 +576,6 @@ unimedUniAmplo1 = {
 }
 
 /* Interação dentro do formulário antes de alterar */
-
-
 function handleHideButton(){
 
     var btnProdutos = document.getElementsByName('produtos')[0]
@@ -589,9 +587,6 @@ function handleHideButton(){
         btnTipoPlano[0].children[1].classList.remove('d-none')
     }
 }
-
-
-
 
 /* Função do Formulário */
 
