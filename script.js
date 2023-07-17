@@ -27,6 +27,8 @@ var numate53 = 0
 var numate58 = 0
 var nummais59 = 0
 
+var numFuncionarios = 0
+
 var valorSimulado = 0
 var valorSimuladoUnimed = 0
 
@@ -581,7 +583,14 @@ function handleHideButton(){
     var btnProdutos = document.getElementsByName('produtos')[0]
     var btnTipoPlano = document.getElementsByClassName('tipo-plano')
 
-    if(btnProdutos.value == 'Personal' || btnProdutos.value == 'PersonalA'){
+    if(
+            btnProdutos.value == 'Personal'     || 
+            btnProdutos.value == 'PersonalA'    || 
+            btnProdutos.value == 'Flex2'        || 
+            btnProdutos.value == 'FlexA2'       || 
+            btnProdutos.value == 'Flex3'        || 
+            btnProdutos.value == 'FlexA3'       
+        ){
         btnTipoPlano[0].children[1].classList.add('d-none')
     }else{
         btnTipoPlano[0].children[1].classList.remove('d-none')
@@ -610,6 +619,8 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
     numate58 = document.getElementById('num54a58').value
     nummais59 = document.getElementById('nummaisde59').value
 
+    numFuncionarios = (Number(numate18) + Number(numate23) + Number(numate28) + Number(numate33) + Number(numate38) + Number(numate43) + Number(numate48) + Number(numate53) + Number(numate58) + Number(nummais59))
+
 
     for(let i = 0; i < tipoPlano.length; i++){
 
@@ -620,12 +631,12 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         var valorPlanoMedicamentos = 0
         var valorProteFamiliar = 0
         var unimedValorSosuni = 0
-        var unimedValorPlanoMedicamentos = 5.07
-        var unimedValorProteFamiliar = 7.59
+        var unimedValorPlanoMedicamentos = 0
+        var unimedValorProteFamiliar = 0
 
         
         if(sosuni.checked){
-            valorSosuni = sosuni.getAttribute('preco')
+            valorSosuni = 14.54
             unimedValorSosuni = 13.59
         }else{
             valorSosuni = 0
@@ -633,7 +644,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         }
 
         if(planoMedicamentos.checked){
-            valorPlanoMedicamentos = planoMedicamentos.getAttribute('preco')
+            valorPlanoMedicamentos = 5.44
             unimedValorPlanoMedicamentos = 5.07
         }else{
             valorPlanoMedicamentos = 0
@@ -641,12 +652,24 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
         }
 
         if(proteFamiliar.checked){
-            valorProteFamiliar = proteFamiliar.getAttribute('preco')
+            valorProteFamiliar = 8.95
             unimedValorProteFamiliar = 7.59
         }else{
             valorProteFamiliar = 0
             unimedValorProteFamiliar = 0
         }
+
+        console.log(
+            `
+            valorSosUni = ${valorSosuni}
+            valorPlanoMedicamentos = ${valorPlanoMedicamentos}
+            valorProteFamiliar = ${valorProteFamiliar}
+            unimedValorSosuni = ${unimedValorSosuni} 
+            unimedValorPlanoMedicamentos = ${unimedValorPlanoMedicamentos}
+            unimedValorProteFamiliar = ${unimedValorProteFamiliar}
+            
+            `
+            )
 
 
         if(tipoPlano[i].checked && tipoPlano[i].defaultValue === 'QColetivo' && selectProduto === 'Personal'){
@@ -662,9 +685,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (Personal.qColetivo.ate53 * numate53) +
                 (Personal.qColetivo.ate58 * numate58) +
                 (Personal.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos ) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -678,9 +699,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedPersonal.qColetivo.ate53 * numate53) +
                 (unimedPersonal.qColetivo.ate58 * numate58) +
                 (unimedPersonal.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorPlanoMedicamentos) + 
-                Number(unimedValorProteFamiliar)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -730,9 +749,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (PersonalA.qColetivo.ate53 * numate53) +
                 (PersonalA.qColetivo.ate58 * numate58) +
                 (PersonalA.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -746,9 +763,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedPersonalA.qColetivo.ate53 * numate53) +
                 (unimedPersonalA.qColetivo.ate58 * numate58) +
                 (unimedPersonalA.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -797,9 +812,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeen.qColetivo.ate53 * numate53) +
                 (UniTeen.qColetivo.ate58 * numate58) +
                 (UniTeen.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -813,9 +826,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeen.qColetivo.ate53 * numate53) +
                 (unimedUniTeen.qColetivo.ate58 * numate58) +
                 (unimedUniTeen.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios) 
             )
 
             var resultado = document.getElementById('resultado')
@@ -861,9 +872,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeen.qIndividual.ate53 * numate53) +
                 (UniTeen.qIndividual.ate58 * numate58) +
                 (UniTeen.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -877,9 +886,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeen.qIndividual.ate53 * numate53) +
                 (unimedUniTeen.qIndividual.ate58 * numate58) +
                 (unimedUniTeen.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                (Number(unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -925,9 +932,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeenRD.qColetivo.ate53 * numate53) +
                 (UniTeenRD.qColetivo.ate58 * numate58) +
                 (UniTeenRD.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios) 
             )
 
             valorSimuladoUnimed = (
@@ -941,9 +946,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeenRD.qColetivo.ate53 * numate53) +
                 (unimedUniTeenRD.qColetivo.ate58 * numate58) +
                 (unimedUniTeenRD.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -989,9 +992,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeenRD.qIndividual.ate53 * numate53) +
                 (UniTeenRD.qIndividual.ate58 * numate58) +
                 (UniTeenRD.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1005,9 +1006,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeenRD.qIndividual.ate53 * numate53) +
                 (unimedUniTeenRD.qIndividual.ate58 * numate58) +
                 (unimedUniTeenRD.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1053,9 +1052,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeenRDA.qColetivo.ate53 * numate53) +
                 (UniTeenRDA.qColetivo.ate58 * numate58) +
                 (UniTeenRDA.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1069,9 +1066,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeenRDA.qColetivo.ate53 * numate53) +
                 (unimedUniTeenRDA.qColetivo.ate58 * numate58) +
                 (unimedUniTeenRDA.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1117,9 +1112,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTeenRDA.qIndividual.ate53 * numate53) +
                 (UniTeenRDA.qIndividual.ate58 * numate58) +
                 (UniTeenRDA.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1133,9 +1126,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTeenRDA.qIndividual.ate53 * numate53) +
                 (unimedUniTeenRDA.qIndividual.ate58 * numate58) +
                 (unimedUniTeenRDA.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1181,9 +1172,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (Flex2.qColetivo.ate53 * numate53) +
                 (Flex2.qColetivo.ate58 * numate58) +
                 (Flex2.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1197,9 +1186,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedFlex2.qColetivo.ate53 * numate53) +
                 (unimedFlex2.qColetivo.ate58 * numate58) +
                 (unimedFlex2.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1245,9 +1232,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (FlexA2.qColetivo.ate53 * numate53) +
                 (FlexA2.qColetivo.ate58 * numate58) +
                 (FlexA2.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1261,9 +1246,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedFlexA2.qColetivo.ate53 * numate53) +
                 (unimedFlexA2.qColetivo.ate58 * numate58) +
                 (unimedFlexA2.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1309,9 +1292,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (Flex3.qColetivo.ate53 * numate53) +
                 (Flex3.qColetivo.ate58 * numate58) +
                 (Flex3.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1325,9 +1306,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedFlex3.qColetivo.ate53 * numate53) +
                 (unimedFlex3.qColetivo.ate58 * numate58) +
                 (unimedFlex3.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1373,9 +1352,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (FlexA3.qColetivo.ate53 * numate53) +
                 (FlexA3.qColetivo.ate58 * numate58) +
                 (FlexA3.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1389,9 +1366,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedFlexA3.qColetivo.ate53 * numate53) +
                 (unimedFlexA3.qColetivo.ate58 * numate58) +
                 (unimedFlexA3.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios) 
             )
 
             var resultado = document.getElementById('resultado')
@@ -1437,9 +1412,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTrio.qColetivo.ate53 * numate53) +
                 (UniTrio.qColetivo.ate58 * numate58) +
                 (UniTrio.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1453,9 +1426,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTrio.qColetivo.ate53 * numate53) +
                 (unimedUniTrio.qColetivo.ate58 * numate58) +
                 (unimedUniTrio.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1501,9 +1472,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTrio.qIndividual.ate53 * numate53) +
                 (UniTrio.qIndividual.ate58 * numate58) +
                 (UniTrio.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios) 
             )
 
             valorSimuladoUnimed = (
@@ -1517,9 +1486,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTrio.qIndividual.ate53 * numate53) +
                 (unimedUniTrio.qIndividual.ate58 * numate58) +
                 (unimedUniTrio.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1565,9 +1532,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTrioRD.qColetivo.ate53 * numate53) +
                 (UniTrioRD.qColetivo.ate58 * numate58) +
                 (UniTrioRD.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1581,9 +1546,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTrioRD.qColetivo.ate53 * numate53) +
                 (unimedUniTrioRD.qColetivo.ate58 * numate58) +
                 (unimedUniTrioRD.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1629,9 +1592,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniTrioRD.qIndividual.ate53 * numate53) +
                 (UniTrioRD.qIndividual.ate58 * numate58) +
                 (UniTrioRD.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1645,9 +1606,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniTrioRD.qIndividual.ate53 * numate53) +
                 (unimedUniTrioRD.qIndividual.ate58 * numate58) +
                 (unimedUniTrioRD.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1693,9 +1652,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniAmplo1.qColetivo.ate53 * numate53) +
                 (UniAmplo1.qColetivo.ate58 * numate58) +
                 (UniAmplo1.qColetivo.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1709,9 +1666,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniAmplo1.qColetivo.ate53 * numate53) +
                 (unimedUniAmplo1.qColetivo.ate58 * numate58) +
                 (unimedUniAmplo1.qColetivo.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
@@ -1757,9 +1712,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (UniAmplo1.qIndividual.ate53 * numate53) +
                 (UniAmplo1.qIndividual.ate58 * numate58) +
                 (UniAmplo1.qIndividual.mais59 * nummais59) + 
-                Number(valorSosuni) + 
-                Number(valorProteFamiliar) + 
-                Number(valorPlanoMedicamentos)
+                ((valorSosuni + valorProteFamiliar + valorPlanoMedicamentos) * numFuncionarios)
             )
 
             valorSimuladoUnimed = (
@@ -1773,9 +1726,7 @@ document.getElementById('simulador').addEventListener("submit", (e) => {
                 (unimedUniAmplo1.qIndividual.ate53 * numate53) +
                 (unimedUniAmplo1.qIndividual.ate58 * numate58) +
                 (unimedUniAmplo1.qIndividual.mais59 * nummais59) + 
-                Number(unimedValorSosuni) + 
-                Number(unimedValorProteFamiliar) + 
-                Number(unimedValorPlanoMedicamentos)
+                ((unimedValorSosuni + unimedValorProteFamiliar + unimedValorPlanoMedicamentos) * numFuncionarios)
             )
 
             var resultado = document.getElementById('resultado')
